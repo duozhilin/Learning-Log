@@ -61,7 +61,7 @@ ROOT_URLCONF = 'learning_log.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': [os.path.join(BASE_DIR, 'learning_log/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -158,4 +158,9 @@ if cwd =='/app' or cwd[:4] == '/tmp':
     STATICFILES_DIRS = (
         os.path.join(BASE_DIR, 'static'),
     )
+else:
+    DEBUG=False
+
+    ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+
 
