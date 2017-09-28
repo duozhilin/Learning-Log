@@ -135,7 +135,8 @@ BOOTSTRAP3 = {
 }
 
 #heroku设置
-if os.getcwd() =='/app':
+cwd = os.getcwd()
+if cwd =='/app' or cwd[:4] == '/tmp':
     import dj_database_url
     DATABASES = {
         'default': dj_database_url.config(default='postgres://localhost')
@@ -149,9 +150,9 @@ if os.getcwd() =='/app':
 
     #静态资源配置
     BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-    # STATIC_ROOT = 'staticfiles'
+    STATIC_ROOT = 'staticfiles'
     # STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+    # STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
     STATICFILES_DIRS = (
         os.path.join(BASE_DIR, 'static'),
     )
