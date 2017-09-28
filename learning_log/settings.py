@@ -146,7 +146,9 @@ if cwd =='/app' or cwd[:4] == '/tmp':
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
     #支持所有的主机头（host header）
-    ALLOWED_HOSTS = ['*']
+    ALLOWED_HOSTS = ['duozhilin.herokuapp.com']
+
+    DEBUG = False
 
     #静态资源配置
     BASE_DIR = os.path.dirname(os.path.abspath(__file__))
