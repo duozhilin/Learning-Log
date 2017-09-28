@@ -57,7 +57,7 @@ def edit_topic(request, topic_id):
         form = TopicForm(instance=topic, data=request.POST)
         if form.is_valid():
             form.save()
-            return HttpResponseRediret(reverse('learning_logs:topics'))
+            return HttpResponseRedirect(reverse('learning_logs:topics'))
 
     context = {'topic':topic, 'form':form}
     return render(request, 'learning_logs/edit_topic.html', context)
